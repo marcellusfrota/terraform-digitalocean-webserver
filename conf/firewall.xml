@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Default Firewall</short>
+  <description>"Existe uma diferença entre CONHECER o caminho e TRILHAR o caminho."</description>
+  <port protocol="tcp" port="80"/>
+  <port protocol="tcp" port="443"/>
+</service>
