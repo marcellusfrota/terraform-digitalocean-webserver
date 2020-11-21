@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: Terraform on DigitalOcean
 description: Just trying automate droplets
+permalink: /terraform-digitalocean/
