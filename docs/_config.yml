@@ -1,2 +1,3 @@
 theme: jekyll-theme-cayman
-title: "Terraform on DigitalOcean"
+title: Terraform on DigitalOcean
+description: Just trying automate droplets
