@@ -1,26 +1,45 @@
-# Terraform DigitalOcean Droplet - Secure Web Server
+# Terraform + DigitalOcean + Secure Web Server
 
-### Nginx + PHP7 + Python3 | MariaDB | Basic security setup
+> Nginx + PHP7.4 + Python3 | MySQL | Basic Security setup with Firewalld
 
-## Table of contents
-* [Getting Credentials](#digitalocean)
+# Table of contents
+
+* [DigitalOcean](#digital-ocean)
+    - [Getting Credentials](#gettingcredentials)
+
 * [Terraform](#terraform)
+    - [Installing Terraform](#installingterraform)
+    - [Windows](#windows)
+    - [Providers](#providers)
+    - [Terraform commands](#terraformcommands)
+    - [Checking](#checking)
+
+* [Secure Web Server](#securewebserver)
+    - [Webserver]
+    - [DigitalOcean Firewall](#bbb)
+    - [Firewalld](#aaa)
+
 * [Contributing](#contributing)
 * [License](#license)
 
-## DigitalOcean
 
-First of all, you need a DigitalOcean account!
+# **DigitalOcean** {#digital-ocean}
+
+First of all, you need a DigitalOcean account, of course!
 DigitalOcean is giving a U$100,00 credit for anyone who [sign up here](https://m.do.co/c/2191bf5ea930).
 
 After this, [create a Personal Access Token](https://www.digitalocean.com/docs/apis-clis/api/create-personal-access-token/) 
 
-### Getting Credentials
+## Getting Credentials
 
+## Create Letsencrypt certificate
 
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+```sh
+$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+```
 
 Output
+```
 Country Name (2 letter code) [AU]:**US**
 State or Province Name (full name) [Some-State]:New York
 Locality Name (eg, city) []:New York City
@@ -28,24 +47,30 @@ Organization Name (eg, company) [Internet Widgits Pty Ltd]:Bouncy Castles, Inc.
 Organizational Unit Name (eg, section) []:Ministry of Water Slides
 Common Name (e.g. server FQDN or YOUR name) []:server_IP_address
 Email Address []:admin@your_domain.com
+```
 
-sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+```sh
+$ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+```
 
-## Terraform
+# **Terraform**
 
-### Installing Terraform
+## Installing Terraform
 
-
+...
 
 ### Windows
 
+...
 
 ### Providers
 
-List of all Terraform Providers
-https://www.terraform.io/docs/providers/
+There's a lot of Provider to choose...
 
-Some of most used providers...
+[List of all Terraform Providers ](https://www.terraform.io/docs/providers/)
+
+
+Some of most used providers
 * [AWS](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 * [DigitalOcean](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs)
 * [AZURE](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
@@ -108,17 +133,21 @@ $ nslookup -type=a YOUR_DOMAIN | grep "Address" | tail -1
 
 Done!
 
-## Contributing
+# **Secure Web Server**
+
+# **Contributing**
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
+p.s.: still waiting for a @fdavidsantos contribution!
+
+# **License**
 [MIT](https://choosealicense.com/licenses/mit/)
 
 **Free Software, Hell Yeah!**
 
-## TODO
+# **TODO**
 
 - Implement multiple instances of a droplet
 - Create new project
